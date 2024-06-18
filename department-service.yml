@@ -3,15 +3,6 @@ spring:
     name: department-service
   config:
     import: optional:configserver:http://localhost:8888
-    
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"    
-server:
-   port: 8080
-
   datasource.url: jdbc:mysql://localhost:3306/department_db?createDatabaseIfNotExist=true
   datasource.username: root
   datasource.password: password@123
@@ -24,6 +15,16 @@ server:
         format_sql: true
         dialect: org.hibernate.dialect.MySQLDialect
     open-in-view: false
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"    
+server:
+   port: 8080
+
+  
     
 eureka:
   client:
